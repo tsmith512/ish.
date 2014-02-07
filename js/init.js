@@ -81,6 +81,16 @@
 		changeActiveState($(this));
 		sizeiframe(sw);
 	});
+
+	$('#sg-daylight').on("click", function(e){
+		e.preventDefault();
+		$('body').toggleClass('daylight');
+		if ( $('body').hasClass('daylight') ) {
+			$('#sg-daylight').text('Nightlight');
+		} else {
+			$('#sg-daylight').text('Daylight');
+		}
+	})
 	
 	//Click Random Size Button
 	$('#sg-size-random').on("click", function(e){

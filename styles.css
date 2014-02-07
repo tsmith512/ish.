@@ -1,6 +1,9 @@
 body {
-  background: #ddd;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAKUlEQVQIW2M0Njb+zwAF79+/Z2CECYA4goKCEAEYB6SQUUlJ6T9IBgYAXx4PMgU4W1oAAAAASUVORK5CYII=') repeat;
 }
+  body.daylight {
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAKklEQVQIW2P88OHDfwYo4OLiYmCECYA43759gwjAOCCFjL9+/foPkoEBAEHdGF9c8DRCAAAAAElFTkSuQmCC') repeat;
+  }
 
 /* Header */
 .sg-header {
@@ -10,13 +13,11 @@ body {
   font-family: "HelveticaNeue", "Helvetica", "Arial", sans-serif;
   text-transform: uppercase;
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
   z-index: 2;
   width: 100%;
-  -webkit-box-shadow: inset 0 1px 0 #5f6164, inset 0 -1px 0 #2e2f2f, 0 1px 3px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: inset 0 1px 0 #5f6164, inset 0 -1px 0 #2e2f2f, 0 1px 3px rgba(0, 0, 0, 0.3);
-  box-shadow: inset 0 1px 0 #5f6164, inset 0 -1px 0 #2e2f2f, 0 1px 3px rgba(0, 0, 0, 0.3); }
+  border-top: 1px solid #444; }
   .sg-header * {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -29,7 +30,7 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
   .sg-header a {
     font-size: 70%;
-    color: gray;
+    color: #999;
     text-decoration: none;
     display: block;
     line-height: 1;
@@ -47,13 +48,21 @@ body {
     .sg-header a:hover, .sg-header a:focus, .sg-header a.active {
       color: white;
       background: rgba(255, 255, 255, 0.05); }
+      .daylight .sg-header a:hover, .daylight .sg-header a:focus, .daylight .sg-header a.active {
+        color: #333;
+        background: #ccc; }
   .sg-header ol li ol li ol li a {
     padding-left: 2em;
     text-transform: none; }
 
+  .daylight .sg-header {
+    background: #dddddd;
+    border-top-color: #ccc;
+  }
+
 /* URL Form */
-#url-toggle { 
-  display: none; 
+#url-toggle {
+  display: none;
 }
 
 #url {
@@ -68,16 +77,27 @@ body {
     -o-transition: background 0.15s ease-out;
     transition: background 0.15s ease-out;
 }
+  .daylight #url {
+    color: #999;
+  }
 
 #url:hover {
   background: #333;
 }
+  .daylight #url:hover {
+    color: #666;
+    background: #ccc;
+  }
 
 #url:focus {
   outline: 0;
   background: #444;
   color: #fff;
 }
+  .daylight #url:focus {
+    background: #ccc;
+    color: #333;
+  }
 
 @media all and (min-width: 46.75em) {
   #url {
@@ -107,6 +127,9 @@ body {
   background: rgba(255, 255, 255, 0.05);
   color: #fff;
 }
+  .daylight #url-submit:hover, .daylight #url-submit:focus {
+    color: #000;
+  }
 
 /* Accordion */
 .sg-acc-handle:after {
@@ -134,6 +157,9 @@ body {
   -ms-transition: max-height 0.5s ease-out;
   -o-transition: max-height 0.5s ease-out;
   transition: max-height 0.5s ease-out; }
+  .daylight .sg-acc-panel {
+    background: #ddd;
+  }
   .sg-acc-panel.active {
     max-height: 50em; }
   .sg-acc-panel.sg-right {
@@ -182,8 +208,12 @@ body {
   transition: all 0.2s ease-out; }
   .sg-control .sg-input:active, .sg-control .sg-input:focus {
     outline: 0;
-    background: #f7f7f7;
-    color: #000; }
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff; }
+  .daylight .sg-control .sg-input:active, .daylight .sg-control .sg-input:focus {
+    outline: 0;
+    background: rgba(255, 255, 255, 0.05);
+    color: #333; }
 
 @media all and (max-width: 45em) {
   .sg-quarter {
@@ -208,8 +238,14 @@ body {
   color: gray;
   padding: 0.8em 0.95em; }
   .sg-current-size:hover .sg-input {
-    background: #f7f7f7;
-    color: #000; }
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff; }
+    .daylight .sg-current-size:hover .sg-input {
+      background: rgba(255, 255, 255, 0.05);
+      color: #666; }
+    .daylight .sg-current-size:hover .sg-input:active, .daylight .sg-current-size:hover .sg-input:focus {
+      background: rgba(255, 255, 255, 0.05);
+      color: #333; }
   @media all and (min-width: 45em) {
     .sg-current-size {
       float: left; } }
@@ -224,7 +260,9 @@ body {
       .sg-size-options > li {
         float: left;
         border: 0;
-        border-left: 1px solid rgba(255, 255, 255, 0.05); } }
+        border-left: 1px solid rgba(255, 255, 255, 0.05); }
+        .daylight .sg-size-options > li {
+          border-left: 1px solid #ccc; } }
 
 #sg-form {
   margin: 0;
@@ -235,14 +273,25 @@ body {
   margin: -2px 0 0 0;
   padding: 0;
   border: 1px solid #222;
-  background-color: #222;
-  color: gray;
-  width: 35px;
+  background: #222;
+  color: #999;
+  width: 45px;
   text-align: right; }
+
+  .daylight .sg-input {
+    color: #999;
+    background: #ddd;
+    border: 1px solid #ddd;
+  }
 
 .sg-input-active {
   background-color: #fff;
   color: #000; }
+
+  .daylight .sg-input-active {
+    color: #333;
+    background: #ccc;
+  }
 
 .sg-view {
   position: relative; }
@@ -255,6 +304,8 @@ body {
   display: inline-block;
   margin-right: 0.4em; }
 
+
+
 /*------------------------------------*\
     $STYLE GUIDE VIEWPORT
 \*------------------------------------*/
@@ -265,8 +316,8 @@ body {
   @media all and (min-width: 44em) {
     #sg-vp-wrap {
       position: fixed;
-      top: 2em;
-      bottom: 0;
+      bottom: 2em;
+      top: 0;
       left: 0;
       right: 0;
       z-index: 0; } }
@@ -298,9 +349,15 @@ body {
   cursor: col-resize; }
 
 #sg-gen-container {
+  box-shadow: 0px 0px 25px #000;
+  background: #000;
   height: 100%;
   text-align: center;
   margin: 0 auto; }
+  .daylight #sg-gen-container {
+    box-shadow: 0px 0px 25px #ccc;
+    background: #fff;
+  }
   #sg-gen-container.hay-mode {
     -webkit-transition: all 40s linear;
     -moz-transition: all 40s linear;
@@ -319,17 +376,24 @@ body {
   margin: 0;
   width: 10px;
   height: 100%;
-  background: #999;
+  background: #444;
   -webkit-transition: background 0.2s ease-out;
   -moz-transition: background 0.2s ease-out;
   -ms-transition: background 0.2s ease-out;
   -o-transition: background 0.2s ease-out;
   transition: background 0.2s ease-out; }
+  .daylight #sg-rightpull {
+    background: #ccc;
+  }
   #sg-rightpull:hover {
-    background: #666; }
+    background: #777; }
+    .daylight #sg-rightpull:hover {
+      background: #999; }
   #sg-rightpull:active {
     cursor: col-resize;
-    background: #444; }
+    background: #AAA; }
+    .daylight #sg-rightpull:active {
+      background: #666; }
 
 .vp-animate {
   -webkit-transition: width 0.8s ease-out;
@@ -339,7 +403,7 @@ body {
   transition: width 0.8s ease-out; }
 
 /*------------------------------------*\
-    $STYLE GUIDE CONTENT 
+    $STYLE GUIDE CONTENT
 \*------------------------------------*/
 /* Section Pattern */
 .sg-pattern {
