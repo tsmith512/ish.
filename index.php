@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Viewport Resizer</title>
+    <title>Viewporter</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="styles.css" media="all" />
@@ -34,11 +34,11 @@
 						<li class="sg-quarter"><a href="#" id="sg-size-l">L</a></li>
 						<li class="sg-half"><a href="#" id="sg-size-full">Full</a></li>
 						<li class="sg-daylight"><a href="#" id="sg-daylight">Daylight</a></li>
-						<!--
-						<li class="sg-half"><a href="#" id="sg-size-random">Random</a></li>
-						<li class="sg-half"><a href="#" class="mode-link" id="sg-size-disco">Disco</a></li>
-						<li class="sg-half"><a href="#" class="mode-link" id="sg-size-hay">Hay!</a></li>
-						-->
+						<li class="sg-half sg-extras"><a href="#" id="sg-size-random">Random</a></li>
+						<li class="sg-half sg-extras"><a href="#" class="mode-link" id="sg-size-hay">Grow</a></li>
+						<li class="sg-half sg-extras"><a href="#" class="mode-link" id="sg-size-disco">Disco</a></li>
+						<li class="sg-half sg-extras"><a href="javascript:(function(){var url=encodeURIComponent(window.location);window.location=('http://<?php echo $_SERVER["HTTP_HOST"] . $_SERVER['REQUEST_URI']; ?>?url='+url);})();" class="mode-link" id="sg-bookmarklet"><span class="title">Viewporter</span><span class="replacement"></span></a></li>
+						<li class="sg-expand"><a href="#" id="sg-expand">&lt;</a></li>
 					</ul>
 				</li>
 			</ul>

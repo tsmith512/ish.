@@ -85,11 +85,18 @@
 	$('#sg-daylight').on("click", function(e){
 		e.preventDefault();
 		$('body').toggleClass('daylight');
-		if ( $('body').hasClass('daylight') ) {
-			$('#sg-daylight').text('Nightlight');
-		} else {
-			$('#sg-daylight').text('Daylight');
-		}
+		$('#sg-daylight').text( $('body').hasClass('daylight') ? 'Nightlight' : 'Daylight' );
+	});
+
+	$('#sg-expand').on("click", function(e){
+		e.preventDefault();
+		$('.sg-extras').toggleClass('sg-extras-show');
+		$('#sg-expand').text( $('.sg-extras:first').hasClass('sg-extras-show') ? '>' : '<' );
+	});
+
+	$('#sg-bookmarklet').on("click", function(e){
+		e.preventDefault();
+		alert('Drag this bookmarklet to your bookmarks bar to open any page in Viewporter with a single click.');
 	})
 	
 	//Click Random Size Button

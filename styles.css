@@ -107,7 +107,7 @@ body {
 
 #url-submit {
   background: none;
-  color: gray;
+  color: #999;
   text-transform: uppercase;
   border: 0;
   cursor: pointer;
@@ -208,11 +208,9 @@ body {
   transition: all 0.2s ease-out; }
   .sg-control .sg-input:active, .sg-control .sg-input:focus {
     outline: 0;
-    background: rgba(255, 255, 255, 0.05);
     color: #fff; }
   .daylight .sg-control .sg-input:active, .daylight .sg-control .sg-input:focus {
     outline: 0;
-    background: rgba(255, 255, 255, 0.05);
     color: #333; }
 
 @media all and (max-width: 45em) {
@@ -238,13 +236,10 @@ body {
   color: gray;
   padding: 0.8em 0.95em; }
   .sg-current-size:hover .sg-input {
-    background: rgba(255, 255, 255, 0.05);
     color: #fff; }
     .daylight .sg-current-size:hover .sg-input {
-      background: rgba(255, 255, 255, 0.05);
       color: #666; }
     .daylight .sg-current-size:hover .sg-input:active, .daylight .sg-current-size:hover .sg-input:focus {
-      background: rgba(255, 255, 255, 0.05);
       color: #333; }
   @media all and (min-width: 45em) {
     .sg-current-size {
@@ -272,25 +267,17 @@ body {
 .sg-input {
   margin: -2px 0 0 0;
   padding: 0;
-  border: 1px solid #222;
-  background: #222;
   color: #999;
-  width: 45px;
+  background: transparent;
+  border: 0;
+  width: 50px;
   text-align: right; }
 
-  .daylight .sg-input {
-    color: #999;
-    background: #ddd;
-    border: 1px solid #ddd;
-  }
-
 .sg-input-active {
-  background-color: #fff;
   color: #000; }
 
   .daylight .sg-input-active {
     color: #333;
-    background: #ccc;
   }
 
 .sg-view {
@@ -304,6 +291,19 @@ body {
   display: inline-block;
   margin-right: 0.4em; }
 
+.sg-extras {
+  display: none;
+}
+.sg-extras.sg-extras-show {
+  display: block;
+}
+
+#sg-bookmarklet span.title {
+  display: none;
+}
+#sg-bookmarklet span.replacement:after {
+  content: 'Bookmarklet';
+}
 
 
 /*------------------------------------*\
